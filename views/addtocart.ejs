@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<title>User Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<style>
+		body 		{ padding-top:20px; }
+	</style>
+</head>
+<div align="right">
+<a href='/logout'> SignOut </a>
+</div>
+<body>
+
+
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Cart</h1>
+    <form >
+	<table class="table table-hover">
+	<tr>
+
+	</tr>
+	<% if (productArray.length) { %>
+
+<% productArray.forEach(function(productArray) { %>
+<div class="card1">
+
+<p>
+
+
+<center><h4><%= JSON.stringify(productArray["id"]["S"])%></h4></center>
+<center><h4><%= JSON.stringify(productArray["category"]["S"])%>--Category</h4></center>
+<center><h4><%= JSON.stringify(productArray["cost"]["N"])%>--Cost</h4></center>
+<center><h4><%= JSON.stringify(productArray["quantity"]["N"])%>--Quantity</h4></center>
+
+
+</p>
+<tr>
+ <center>
+
+
+</center>
+        </tr>
+
+
+</div>
+
+
+
+<% }); %>
+<% } %>
+
+  
+</table>
+
+</form>
+<button type="submit" class="btn btn-warning btn-sm">Proceed to Checkout</button>
+<li><a href="/dyproducts"><i class="glyphicon glyphicon-cog"></i> Continue Shopping <span class="badge badge-info"></span></a></li>
+	
+	<hr>
+</div>
+
+</div>
+</body>
+</html>

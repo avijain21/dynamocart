@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title><%=username%></title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/stylesheets/test.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">FAB-BUY</a>
+      div ng-app="myApp" ng-controller="Example">
+  <div class="container controls">
+      <div class="row">
+          <div class="col-md-12">
+              <form action="" method="POST" role="form">
+                  <legend>Find a Product from <a href="/test">Fab-Buy</a></legend>
+                  <div class="input-group">
+                      <input type="search" id="search" class="form-control" ng-model="search">
+
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="container result">
+      <div ng-class="list ? 'col-md-6' : 'col-md-4'" class="movie" ng-repeat=" in movies | filter:search | orderBy:'title':reverse">
+          <img ng-class="list ? 'col-md-2' : 'col-md-12'" ng-src="{{movie.src}}" alt="" class="img-thumbnail" />
+      </div>
+  </div>
+</div>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#">My Profile</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-3">
+      <!-- Left column -->
+      <a href="/test"><strong><i class="glyphicon glyphicon-wrench"></i>FAB-BUY</strong></a>  
+      
+      <hr>
+      
+      <ul class="list-unstyled">
+        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+          <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
+          </a>
+            <ul class="list-unstyled collapse in" id="userMenu">
+                <li class="active"> <a href="/dyproducts"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="/addtocart"><i class="glyphicon glyphicon-cog"></i> Cart <span class="badge badge-info"></span></a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Phones</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i>Ipads</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i>Nailpolish</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+            </ul>
+        </li>
+       
+  
+       
+    </div><!-- /col-3 -->
+    <div align="center" class="col-sm-9">          
+<% if (productArray.length) { %>
+
+<% productArray.forEach(function(productArray) { %>
+<div class="card1">
+
+<p>
+
+
+<center><h4><%= JSON.stringify(productArray["id"]["S"])%></h4></center>
+<center><h4><%= JSON.stringify(productArray["category"]["S"])%>--Category</h4></center>
+<center><h4><%= JSON.stringify(productArray["brand"]["S"])%>--Brand</h4></center>
+<center><h4><%= JSON.stringify(productArray["make"]["S"])%>--Make</h4></center>
+
+
+</p>
+<tr>
+ <center>
+
+<form action="/addtocart/<%= JSON.stringify(productArray["id"]["S"])%>/<%= JSON.stringify(productArray["category"]["S"]) %>/<%= JSON.stringify(productArray["cost"]["S"]) %>" method="post">
+
+<input type="submit" value="Add to cart"></input>
+
+</form> 
+
+</center>
+        </tr>
+
+
+</div>
+
+
+
+<% }); %>
+<% } %>
+
+  <img src="/images/collage.png" height="275px" width="600px">
+
+</div>  
+
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+
+
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="/stylesheets/styles.css"> <!-- load bootstrap css -->
+	<style>
+		body 		{ padding-top:20px; }
+	</style>
+</head>
+<body>
+
+<div align="right">
+<a href='/logout'> SignOut </a>
+</div>
+<form action="/cart" method="post">
+
+
+</form>
+<div class="container"> 
+	
+<div class="col-sm-3 col-sm-offset-1">
+
+
+<% for(var j=0; j<userlist.length; j++) { %>
+					
+<div class="col-sm-14 col-sm-offset-3">
+<!--<form action="/cartlist" method="post">-->
+		
+			<table class="table" id="product" width="100%">
+  			<tr>
+  				<th><%=userlist[j].Item1%></th>
+  			
+  			<th><%=userlist[j].Item2%></th>
+  			
+  			<th><%=userlist[j].Item3%></th>
+  			
+  			<th><%=userlist[j].Item4%></th>
+
+  		</tr>
+  			<tr>
+  			<td><img src="/images/tv1.jpg" height="150px" width="150px"> </td>
+  			<td><img src="/images/ph.jpg" height="150px" width="150px"></td>
+  			<td><img src="/images/ip.jpg" height="150px" width="150px"></td>
+  			<td><img src="/images/np.jpg" height="150px" width="150px"></td>
+
+  			</tr>
+  			<tr>
+  				<td><a href="/tv">Telivision on Site</a></td>
+  				<td><a href="/ph">Phones on Site</a></td>
+
+
+  				<td><button type="submit" class="btn btn-warning btn-sm" class="btn btn-primary" btn-lg action="/ip">Ipads on site</button></td>
+
+  				<td><button type="submit" class="btn btn-warning btn-sm" class="btn btn-primary" btn-lg action="/np">Nailpolish on site</button></td>
+
+  			</tr>
+
+            </table>
+		<div>
+		<div class="form-group">
+
+
+			<img src="/images/collage.png" height="275px" width="600px">
+			
+		
+		</div> 
+		
+		</div>
+	</form>
+</div>
+					
+	<% } %>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

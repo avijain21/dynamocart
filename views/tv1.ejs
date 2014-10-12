@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Bootstrap 3 Admin</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/stylesheets/test.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">FAB-BUY</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="#">My Profile</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+<div class="row">
+	<div class="col-sm-3">
+      <!-- Left column -->
+     <a href="/test"><strong><i class="glyphicon glyphicon-wrench"></i>FAB-BUY</strong></a>
+      <hr>
+      
+      <ul class="list-unstyled">
+        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+          <h5>Settings <i class="glyphicon glyphicon-chevron-down"></i></h5>
+          </a>
+            <ul class="list-unstyled collapse in" id="userMenu">
+                <li class="active"> <a href="/test"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                <li><a href="/tv1"><i class="glyphicon glyphicon-cog"></i> Telivision <span class="badge badge-info"></span></a></li>
+                <li><a href="/ph1"><i class="glyphicon glyphicon-cog"></i>Phones</a></li>
+                <li><a href="/ip"><i class="glyphicon glyphicon-cog"></i>Ipads</a></li>
+                <li><a href="/np"><i class="glyphicon glyphicon-cog"></i>Nailpolish</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+            </ul>
+        </li>
+       
+  
+       
+  	</div><!-- /col-3 -->
+    <div class="col-sm-9">
+
+ <% for(var j=0; j<userlist.length; j++) { %>
+        
+          
+<div class="col-sm-14 col-sm-offset-3">
+<!--<form action="/cartlist" method="post">-->
+
+    
+      <table class="table" id="product" width="100%">
+        <tr>
+          <th><%=userlist[j].Item1%></th>
+        
+        <th><%=userlist[j].Item2%></th>
+        
+        <th><%=userlist[j].Item3%></th>
+        
+        <th><%=userlist[j].Item4%></th>
+
+        <th><%=userlist[j].Item5%></th>
+
+      </tr>
+        <tr>
+        <td><img src="/images/<%=userlist[j].Item5%>.jpg" height="150px" width="150px"> </td>
+      
+        <tr>
+          <td><button type="submit" class="btn btn-warning btn-sm" class="btn btn-primary" btn-lg action="/cart">Add to cart</button></td>
+
+
+        </tr>
+
+            </table>
+    <div>
+    <div class="form-group">
+      
+    
+    </div> 
+    
+    </div>
+  </form>
+</div>
+</div>
+          
+  <% } %>
+  <div align="center"> 
+  <img src="/images/collage.png" height="275px" width="600px">
+</div>
+</div>  
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>

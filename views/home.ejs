@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<style>
+		body 		{ padding-top:20px; }
+	</style>
+</head>
+<div align="right">
+
+<a href='/logout'> SignOut </a>
+</div>
+
+
+<form action="/cart" method="post">
+
+<div align="right"><button type="submit" value="redirect" class="btn btn-primary" btn-lg action="/cart">Cart</button></div>
+
+</form>
+<body>
+<h3><span class="fa fa-sign-in"></span> Welcome <%= firstname %></h3>
+Your last login was on : <%= lastlogin %>
+
+
+<div class="container">
+<span class="label label-warning"><%=message%></span>	
+
+<div class="col-sm-3 col-sm-offset-3">
+
+<form action="/listproducts" method="post">
+		<div class="form-group">
+			<label>Select Product Category</label>
+			<select class="form-control" name="category">
+	  			
+	  			<% for(var i=0; i<products.length; i++) { %>
+					<option value=<%=products[i].category%>><%=products[i].category%></option>
+	<% } %>
+			</select>
+		</div>
+		<input type="hidden" name="email" value=<%=email%>>
+		
+		<button type="submit" class="btn btn-warning btn-sm">Search</button>
+		
+	</form>
+</div>
+
+</div>
+
+</body>
+</html>

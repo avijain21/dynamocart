@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title>User Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<style>
+		body 		{ padding-top:20px; }
+	</style>
+</head>
+<div align="right">
+<a href='/logout'> SignOut </a>
+</div>
+<body>
+
+
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Cart</h1>
+    <form action="/payment" method="post">
+	<table class="table table-hover">
+	<tr>
+	<th>Product</th>
+	<th>Quantity</th>
+	<th>Price</th>
+	</tr>
+	<% for(var j=0; j<productdetails.length; j++) { %>
+	<tr>
+	<th><%=productdetails[j].id%></th>
+	<th><%=productdetails[j].cost%></th>
+	<th>$<%=productdetails[j].category%></th>
+	<th></th>
+	<th>
+	<form action="/removeitems" method="post">
+	<input type="hidden" name="id" value=<%=productdetails[j].id%>>
+	<button type="submit" class="btn btn-warning btn-sm">Remove</button>
+	</form>
+	</th>
+	</tr>
+	<tr><th>Total Items in the cart: <%=productdetails.length%></th>
+	<th>Total Price: $<%=productdetails[j].price%></th></tr>
+	<% } %>
+  
+</table>
+<button type="submit" class="btn btn-warning btn-sm">Proceed to Checkout</button>
+<button type="button" onClick ="/home" formmethod="post" class="btn btn-warning btn-sm">Continue Shopping</button>
+</form>
+	
+	<hr>
+</div>
+
+</div>
+</body>
+</html>

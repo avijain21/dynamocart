@@ -1,0 +1,97 @@
+
+
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	 <!-- load bootstrap css -->
+	<link rel="stylesheet" href="/stylesheets/products.css">
+	<style>
+		body 		{ padding-top:20px; }
+	</style>
+</head>
+<body>
+
+<div align="right">
+<a href='/logout'> SignOut </a>
+</div>
+<form action="/cart" method="post">
+
+<div align="center"><a href="/ph"><img src="/images/1.jpg" height="100px" width="100px"></a>></div>
+
+</form>
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='#'><span>Home</span></a></li>
+   <li class='has-sub'><a href='/products'><span>Products</span></a>
+      <ul>
+         <li><a href="/tv">Telivision on Site<span></span></a></li>
+         <li><a href="/ph">Smart Phones on Site<span></span></a></li>
+         <li><a href="/ip">Ipads on Site<span></span></a></li>
+         <li class='last'><a href='#'><span>Product 3</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>About</span></a>
+      <ul>
+         <li><a href='#'><span>Company</span></a></li>
+         <li class='last'><a href='#'><span>Contact</span></a></li>
+      </ul>
+   </li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+
+<div class="container"> 
+	
+<div class="col-sm-3 col-sm-offset-1">
+
+
+<% for(var j=0; j<userlist.length; j++) { %>
+					
+<div class="col-sm-14 col-sm-offset-3">
+<!--<form action="/cartlist" method="post">-->
+
+		
+      <table class="table" id="product" width="100%">
+        <tr>
+          <th><%=userlist[j].Item1%></th>
+        
+        <th><%=userlist[j].Item2%></th>
+        
+        <th><%=userlist[j].Item3%></th>
+        
+        <th><%=userlist[j].Item4%></th>
+
+        <th><%=userlist[j].Item5%></th>
+
+      </tr>
+        <tr>
+        <td><img src="/images/<%=userlist[j].Item5%>.jpg" height="150px" width="150px"> </td>
+  		
+  			<tr>
+  				<td><button type="submit" class="btn btn-warning btn-sm" class="btn btn-primary" btn-lg action="/cart">Add to cart</button></td>
+
+
+  			</tr>
+
+            </table>
+		<div>
+		<div class="form-group">
+			
+		
+		</div> 
+		
+		</div>
+	</form>
+</div>
+</div>
+					
+	<% } %>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
