@@ -150,7 +150,7 @@ app.use(function(req, res, next){
 
 
 // all environments
-app.set('port', process.env.PORT || 3200);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
