@@ -14,11 +14,11 @@ exports.list = function(req, res){
 function connect()
 {
 	var connection = mysql.createConnection({
-		host     : 'localhost',
+		host     : 'test1.cgcitoidtcqx.us-east-1.rds.amazonaws.com',
 		user     : 'root',
-		password : '1234',
+		password : 'password',
 		port: '3306',
-		database: 'test'
+		database: 'test1'
 	});
 
 	connection.connect();
