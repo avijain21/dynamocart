@@ -14,7 +14,7 @@ var app = express();
 var aws = require('aws-sdk');
 aws.config.update({region: 'us-east-1'});
 
-aws.config.update({accessKeyId: 'AKIAJ4MURIQ4SDWZ2BDQ', secretAccessKey: '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'});
+aws.config.update({accessKeyId: '***************', secretAccessKey: '****************************'});
 var moment = require('moment');
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -35,7 +35,7 @@ app.get('/dyproducts',function(req,res)
 {var aws = require('aws-sdk');
 aws.config.update({region: 'us-east-1'});
 
-aws.config.update({accessKeyId: 'AKIAJ4MURIQ4SDWZ2BDQ', secretAccessKey: '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'});
+aws.config.update({accessKeyId: '********************8', secretAccessKey: '******************************'});
 var dydb = new aws.DynamoDB();
 
     var dydb = new aws.DynamoDB();
@@ -63,7 +63,7 @@ app.post('/addtocart/:id/:category/:cost',function(req,res)
 	console.log("i reached here");
 	var aws = require('aws-sdk');
 	aws.config.update({region: 'us-east-1'});
-	aws.config.update({accessKeyId: 'AKIAJ4MURIQ4SDWZ2BDQ', secretAccessKey: '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'});
+	aws.config.update({accessKeyId: '*********************', secretAccessKey: '******************************'});
 	var dydb = new aws.DynamoDB();
 	console.log(req.session.username);
 	console.log("");
